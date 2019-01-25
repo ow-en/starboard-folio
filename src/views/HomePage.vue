@@ -5,25 +5,13 @@
     </v-layout>
     <v-layout row wrap>
       <div class="slideSection">
-        <header>
-          <h1>Header Content</h1>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polygon
-              class="svg--sm"
-              fill="#f5f5f5"
-              points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"
-            ></polygon>
-            <polygon
-              class="svg--lg"
-              fill="#f5f5f5"
-              points="12,10 25,100 33,-21 45,100 50,75 45,100 72,20 85,100 95,50 100,80 100,100 0,100"
-            ></polygon>
-          </svg>
-        </header>
-
-        <section>
-          <h1>Section Content</h1>
-        </section>
+        <div class="demo plain">
+          <section>
+            <header></header>
+            <div class="separator"></div>
+            <footer></footer>
+          </section>
+        </div>
       </div>
       <div class="blockOne"></div>
       <div class="blockTwo"></div>
@@ -76,41 +64,39 @@ export default class HomePage extends Vue {}
 
 .slideSection {
   width: 100%;
+  height: 400px;
 }
 
-header {
-  position: relative;
-  height: 300px;
-  background-image: linear-gradient(#33ffed, #674fec);
+.separator {
+  width: var(--width);
+  height: var(--height);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--top-color),
+    var(--top-color) 50%,
+    var(--bottom-color) 50%,
+    var(--bottom-color)
+  );
 }
 
-h1 {
-  padding: 100px 0;
-  font: 44px "Arial";
-  text-align: center;
+.separator.reverse {
+  background-image: linear-gradient(
+    to bottom left,
+    var(--top-color),
+    var(--top-color) 50%,
+    var(--bottom-color) 50%,
+    var(--bottom-color)
+  );
 }
 
-header h1 {
-  color: white;
-}
-
-svg {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-}
-
-@media (max-width: 699px) {
-  .svg--lg {
-    display: none;
-  }
-}
-
-@media (min-width: 700px) {
-  .svg--sm {
-    display: none;
-  }
+.separator.vertical.reverse {
+  background-image: linear-gradient(
+    to top right,
+    var(--top-color),
+    var(--top-color) 50%,
+    var(--bottom-color) 50%,
+    var(--bottom-color)
+  );
 }
 
 #homeLayout {
