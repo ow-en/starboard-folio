@@ -10,7 +10,7 @@
         <v-btn flat to="/dashboard/home">Dashboard</v-btn>
         <v-btn flat>Log Out</v-btn>
       </v-toolbar-items>
-      <v-btn dark color="purple darken-2 text-xs-center" to="/login">Login</v-btn>
+      <v-btn dark color="#7232f9" to="/login">Login</v-btn>
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height>
