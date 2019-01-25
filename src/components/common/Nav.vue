@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-toolbar fixed app dense flat>
+    <v-toolbar fixed app dense flat id="navmain">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Some Application Title</v-toolbar-title>
+      <v-toolbar-title>Owen Caulfield</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat to="/register">Sign Up</v-btn>
@@ -10,7 +10,7 @@
         <v-btn flat to="/dashboard/home">Dashboard</v-btn>
         <v-btn flat>Log Out</v-btn>
       </v-toolbar-items>
-      <v-btn color="primary" to="/login">Login</v-btn>
+      <v-btn dark color="purple darken-2 text-xs-center" to="/login">Login</v-btn>
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height>
@@ -41,6 +41,10 @@ export default class Nav extends Vue {
 <style scoped>
 .router-link-exact-active {
   color: #209cee !important;
+}
+
+#navmain {
+  padding: 0px !important;
 }
 </style>
 

@@ -1,8 +1,11 @@
 <template>
-  <v-container grid-list-md text-xs-center id="chunk1">
-    <v-layout>
+  <v-container grid-list-xl id="homeLayout">
+    <v-layout row wrap>
+      <home id="home"/>
+    </v-layout>
+    <v-layout row wrap>
       <div>
-        <v-flex lg4 id="greeter">
+        <v-flex lg4 id="chunkTwo">
           <h1 id="header">Hi, I'm</h1>
           <h1 id="header">Owen 👉</h1>
         </v-flex>
@@ -13,15 +16,18 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import Home from "./Home.vue";
 
 @Component({
-  components: {}
+  components: {
+    Home
+  }
 })
-export default class Home extends Vue {}
+export default class HomePage extends Vue {}
 </script>
 
 <style lang="css" scoped>
-#chunk1 {
+#home {
   background: linear-gradient(
     to right,
     hsl(0, 0%, 96%) 0%,
@@ -43,13 +49,17 @@ export default class Home extends Vue {}
   );
 
   height: 700px;
-  width: 100%;
+  max-width: 100% !important;
 }
-#greeter {
-  text-align: left;
-  margin-left: 20px;
+
+#homeLayout {
+  padding-top: 0px !important;
+  max-width: 100% !important;
 }
-#header {
-  font-size: 92px;
+
+#chunkTwo {
+  height: 700px;
+  background: lightgray;
+  max-width: 100%;
 }
 </style>
