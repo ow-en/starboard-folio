@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-toolbar fixed app dense flat id="navmain">
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon @click.stop="emitMenu"></v-toolbar-side-icon>
       <v-toolbar-title>Owen Caulfield</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -29,10 +29,15 @@ import { EventBus } from "../.././event-bus";
 import { mapGetters } from "vuex";
 
 @Component({
-  computed: mapGetters({})
+  computed: mapGetters({}),
+  components: {}
 })
 export default class Nav extends Vue {
   drawer: boolean = false;
+
+  emitMenu() {
+    EventBus.$emit("toggle-menu");
+  }
 }
 </script>
 
